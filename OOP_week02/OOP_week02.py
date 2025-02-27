@@ -1,5 +1,5 @@
 class BeeElephant:
-    def __init__(self, bee_part: int, elephant_part: int):
+    def __init__(self, bee_part: int, elephant_part: int) -> None:
         """
         Инициализирует объект BeeElephant с частями пчелы и слона.
         :param bee_part: Часть пчелы (от 0 до 100)
@@ -8,14 +8,14 @@ class BeeElephant:
         self.bee_part: int = bee_part
         self.elephant_part: int = elephant_part
 
-    def fly(self):
+    def fly(self) -> bool:
         """
         Проверяет, может ли объект летать (если часть пчелы больше или равна части слона).
         :return: True, если может летать, иначе False
         """
         return self.bee_part >= self.elephant_part
 
-    def trumpet(self):
+    def trumpet(self) -> str:
         """
         Издает звук, зависящий от пропорций частей пчелы и слона.
         :return: "tu-tu-doo-doo!", если часть слона больше или равна части пчелы, иначе "wzzzzz"
@@ -25,7 +25,7 @@ class BeeElephant:
         else:
             return "wzzzzz"
 
-    def eat(self, meal: str, value: int):
+    def eat(self, meal: str, value: int) -> None:
         """
         Меняет пропорции частей пчелы и слона в зависимости от съеденной еды.
         :param meal: Тип еды ('nectar' увеличивает часть пчелы, 'grass' увеличивает часть слона)
@@ -38,7 +38,7 @@ class BeeElephant:
             self.bee_part = max(0, self.bee_part - value)
             self.elephant_part = min(100, self.elephant_part + value)
 
-    def get_parts(self):
+    def get_parts(self) -> list[int]:
         """
         Возвращает список с текущими значениями частей пчелы и слона.
         :return: Список из двух элементов: [bee_part, elephant_part]
