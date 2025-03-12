@@ -5,7 +5,7 @@ from typing import Type
 class Deposit:
     """Базовый класс для банковского вклада"""
 
-    def __init__(self, amount: float, interest_rate: float, term: int) -> None:
+    def __init__(self, amount: float, interest_rate: float, term: int):
         """
         :param amount: сумма вклада
         :param interest_rate: процентная ставка (в процентах)
