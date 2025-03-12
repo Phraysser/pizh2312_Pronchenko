@@ -54,7 +54,7 @@ class Deposit:
 class BonusDeposit(Deposit):
     """Класс для бонусного вклада"""
 
-    def __init__(self, amount: float, interest_rate: float, term: int, bonus_threshold: float, bonus_rate: float) -> None:
+    def __init__(self, amount: float, interest_rate: float, term: int, bonus_threshold: float, bonus_rate: float):
         super().__init__(amount, interest_rate, term)
         self.bonus_threshold = bonus_threshold
         self.bonus_rate = bonus_rate
