@@ -5,7 +5,7 @@ from linesegment import LineSegment  # Подключаем класс LineSegme
 class LineSegmentContainer:
     """Класс-контейнер для хранения объектов LineSegment"""
 
-    def __init__(self) -> None:
+    def __init__(self):
         """Инициализация контейнера с пустым списком данных"""
         self._data: List[LineSegment] = []
 
@@ -17,26 +17,26 @@ class LineSegmentContainer:
         """Позволяет получать элементы контейнера по индексу"""
         return self._data[index]
 
-    def add(self, value: LineSegment) -> None:
+    def add(self, value: LineSegment):
         """Добавляет объект LineSegment в контейнер"""
         if isinstance(value, LineSegment):
             self._data.append(value)
         else:
             raise TypeError("Можно добавлять только объекты LineSegment")
 
-    def remove(self, index: int) -> None:
+    def remove(self, index: int):
         """Удаляет элемент из контейнера по индексу"""
         if 0 <= index < len(self._data):
             self._data.pop(index)
         else:
             raise IndexError("Индекс вне диапазона")
 
-    def save(self, filename: str) -> None:
+    def save(self, filename: str):
         """Сохраняет контейнер в JSON-файл"""
         with open(filename, "w") as f:
             json.dump([segment.to_dict() for segment in self._data], f)
 
-    def load(self, filename: str) -> None:
+    def load(self, filename: str):
         """Загружает контейнер из JSON-файла"""
         with open(filename, "r") as f:
             segments_data = json.load(f)
