@@ -1,0 +1,4 @@
+UserManager 100 3
+Administrator admin 1234 5
+Guest guest1 guest123 30
+Guest guest2 guest456 45
